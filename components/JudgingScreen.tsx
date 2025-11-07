@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Player } from '../types';
 
@@ -14,7 +15,7 @@ const JudgingScreen: React.FC<JudgingScreenProps> = ({ judge, playerInQuestion, 
         Judge <span className="text-pink-400">{judge.name}</span>, the decision is yours!
       </h2>
       <p className="text-lg text-gray-400 mb-8">
-        Was <span className="font-semibold text-white">{playerInQuestion.name}</span> an asshole?
+        Was <span className="font-semibold text-white">{playerInQuestion.name}</span> an A*shole?
       </p>
 
       <div className="w-full flex flex-col sm:flex-row gap-4">
@@ -22,13 +23,13 @@ const JudgingScreen: React.FC<JudgingScreenProps> = ({ judge, playerInQuestion, 
           onClick={() => handleJudgment(true)}
           className="w-full py-6 text-xl font-bold text-white bg-pink-500 rounded-lg shadow-lg shadow-pink-900/40 hover:bg-pink-600 hover:scale-105 transform transition-all"
         >
-          YOU'RE THE ASSHOLE
+          YOU'RE THE A*SHOLE
         </button>
         <button
           onClick={() => handleJudgment(false)}
           className="w-full py-6 text-xl font-bold text-white bg-pink-500 rounded-lg shadow-lg shadow-pink-900/40 hover:bg-pink-600 hover:scale-105 transform transition-all"
         >
-          NOT THE ASSHOLE
+          NOT THE A*SHOLE
         </button>
       </div>
     </div>

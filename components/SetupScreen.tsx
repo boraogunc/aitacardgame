@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Player } from '../types';
 import { MIN_PLAYERS, MAX_PLAYERS } from '../constants';
@@ -32,10 +33,15 @@ const SetupScreen: React.FC<SetupScreenProps> = ({
   return (
     <div className="bg-gray-800/50 backdrop-blur-sm p-6 sm:p-8 rounded-3xl shadow-2xl border border-gray-700/50 flex flex-col items-center animate-fade-in w-full">
       
+      <div className="text-7xl mb-4 transition-transform hover:rotate-12 hover:scale-110">
+        {/* Using a CSS filter to adjust the emoji's color to be more purple, ensuring design consistency across platforms. */}
+        <span style={{ filter: 'hue-rotate(-30deg) saturate(1.5)' }}>😈</span>
+      </div>
+      
       <h2 className="text-3xl sm:text-4xl font-bold text-white text-center mb-2">
-        Ready to find the biggest asshole?
+        Ready to find the biggest A*shole?
       </h2>
-      <p className="text-gray-400 text-center mb-6">Enter player names and select game time.</p>
+      <p className="text-gray-400 text-center mb-6 max-w-sm">This hilarious storytelling game, inspired by Reddit's AITA culture, challenges you to defend your questionable choices. Enter player names and select game time to start the judgment!</p>
       
       <div className="space-y-4 mb-6 w-full">
         {players.map((player, index) => (
@@ -104,11 +110,11 @@ const SetupScreen: React.FC<SetupScreenProps> = ({
           </div>
           <div className="flex items-start gap-4">
             <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-pink-500 text-white font-bold rounded-full mt-0.5">2</div>
-            <p className="flex-1">The Judge decides if you're the asshole.</p>
+            <p className="flex-1">The Judge decides if you're the A*shole.</p>
           </div>
           <div className="flex items-start gap-4">
             <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-pink-500 text-white font-bold rounded-full mt-0.5">3</div>
-            <p className="flex-1">At the end, find out who's the biggest asshole!</p>
+            <p className="flex-1">At the end, find out who's the biggest A*shole!</p>
           </div>
         </div>
         <p className="text-xs text-gray-600 text-center mt-8">

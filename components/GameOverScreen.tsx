@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Player } from '../types';
 import { StarIcon } from './icons/Icons';
@@ -14,12 +15,12 @@ const GameOverScreen: React.FC<GameOverScreenProps> = ({ winners, players, reset
 
   const getGameOverTitle = () => {
     if (topScore === 0) {
-      return "Wow, a game with no assholes!";
+      return "Wow, a game with no A*sholes!";
     }
     if (winners.length > 1) {
-      return "It's a tie for biggest asshole!";
+      return "It's a tie for biggest A*shole!";
     }
-    return "And the biggest asshole is...";
+    return "And the biggest A*shole is...";
   };
 
   return (

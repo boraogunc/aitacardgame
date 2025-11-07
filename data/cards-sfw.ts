@@ -1,0 +1,22 @@
+export const cardsSfw: string[] = [
+  "%% ate a coworker's lunch from the office fridge that had a name on it. Explain why you were so hungry and if you got caught.",
+  "%% forgot to mute their mic on a video call and complained about the meeting. Recount what you said and how you recovered.",
+  "%% used 'Reply All' on a company-wide email just to say 'Thanks!'. Defend why you felt this was necessary.",
+  "%% finished the milk and put the empty carton back in the fridge. Explain why you didn't just get a new one.",
+  "%% returned a borrowed book with a coffee stain on the cover. Tell the story of the stain and why you think an apology was enough.",
+  "%% didn't like a teammate's work on a group project, so they secretly redid it without telling them. Defend your choice to go behind their back.",
+  "%% microwaved fish in the office breakroom, stinking up the entire floor. Explain why you absolutely had to have fish that day.",
+  "%% kept whispering questions to their friend throughout a movie at the theater. Explain what was so confusing and why you couldn't stay quiet.",
+  "%% pretended to watch and enjoy a TV show a friend recommended, even though they hated it. Explain how you've maintained this lie.",
+  "%% accidentally took a neighbor's package, opened it, and then left it back on their doorstep like nothing happened. Explain why you didn't leave a note.",
+  "%% left their shopping cart in the middle of a parking spot instead of returning it. Explain why you didn't take a few extra seconds to put it away.",
+  "%% occupied a four-person table by themself for hours at a busy coffee shop with no other seats. Defend why you didn't move to a smaller spot.",
+  "%% went to a friend's birthday party without bringing a gift. Explain why you showed up empty-handed.",
+  "%% bailed on dinner plans at the last minute with a flimsy excuse. Reveal what you were actually doing and why you lied.",
+  "%% watched videos on their phone with the sound on full blast while on public transport. Explain why you didn't use headphones and how you thought it wouldn't bother anyone.",
+  "%% borrowed a friend's car and returned it with the gas tank nearly empty. Explain why you didn't fill it up.",
+  "%% left a pile of clothes in the fitting room after trying them on. Defend why you think it's not your job to clean up.",
+  "%% used a fake background on a Zoom call to hide the fact they were still in their pajamas. Explain why you went to such lengths to appear professional.",
+  "%% promised to water a friend's plant, but forgot, and the plant wilted. Recount this botanical tragedy and how you tried to make up for it.",
+  "%% kept looking at their phone over someone's shoulder while they were in the middle of a conversation. Explain what was more interesting on your phone and justify your actions."
+];

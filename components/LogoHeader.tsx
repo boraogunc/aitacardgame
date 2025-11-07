@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { GameState, Player } from '../types';
 import { ClockIcon, ShareIcon, RestartIcon } from './icons/Icons';
@@ -26,7 +27,7 @@ const LogoHeader: React.FC<LogoHeaderProps> = ({ gameState, timeLeft, resetGame,
 
     if (gameState === 'playerTurn' && cardText && player) {
       const processedCardText = cardText.replace(/%%/g, player.name);
-      shareText = `Who's the asshole in this situation? "${processedCardText}". Let's play and find out!`;
+      shareText = `Who's the a*shole in this situation? "${processedCardText}". Let's play and find out!`;
     }
     
     const fullMessage = `${shareText}\n\n${url}`;
@@ -67,7 +68,10 @@ const LogoHeader: React.FC<LogoHeaderProps> = ({ gameState, timeLeft, resetGame,
 
   return (
     <>
-      <header className="absolute top-0 left-0 right-0 px-4 sm:px-8 py-3 flex items-center justify-between w-full z-10 bg-gray-900/50 backdrop-blur-sm border-b border-gray-800/60">
+      <header 
+        className="absolute top-0 left-0 right-0 px-4 sm:px-8 pb-3 flex items-center justify-between w-full z-10 bg-gray-900/50 backdrop-blur-sm border-b border-gray-800/60"
+        style={{ paddingTop: `calc(0.75rem + env(safe-area-inset-top))` }}
+      >
         
         <div className="flex items-baseline gap-3">
           <h1 className="font-logo text-white text-3xl sm:text-4xl tracking-wider">AITA?</h1>
