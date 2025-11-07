@@ -1,0 +1,21 @@
+{
+  "name": "AITA Card Game",
+  "short_name": "AITA Game",
+  "description": "A fun, minimalist party game where players decide who the 'asshole' is based on random life scenarios.",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#111827",
+  "theme_color": "#EC4899",
+  "icons": [
+    {
+      "src": "icons/icon-192x192.svg",
+      "type": "image/svg+xml",
+      "sizes": "192x192"
+    },
+    {
+      "src": "icons/icon-512x512.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512"
+    }
+  ]
+}

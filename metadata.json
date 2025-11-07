@@ -1,0 +1,5 @@
+{
+  "name": "AITA Card Game",
+  "description": "A fun, minimalist party game where players decide who the 'asshole' is based on random life scenarios. Designed for 2-20 players with a 20-minute game timer.",
+  "requestFramePermissions": []
+}

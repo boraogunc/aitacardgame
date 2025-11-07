@@ -1,0 +1,22 @@
+export const cards: string[] = [
+  "%% saw their friend's partner on a dating app and told their friend.",
+  "%% ate the last slice of pizza at a party without asking if anyone else wanted it.",
+  "%% re-gifted a present they received last year to another friend.",
+  "When a friend asked for an honest opinion, %% told them their new haircut was unflattering.",
+  "%% asked the person in front of them at a concert to sit down because they were blocking the view.",
+  "%% corrected their boss's grammar in a group email.",
+  "%% used the express checkout lane with 11 items instead of the 10-item limit.",
+  "%% didn't hold the door open for the person walking behind them because they were in a hurry.",
+  "%% reported a coworker for consistently taking long lunch breaks.",
+  "%% asked their neighbors to turn down their music at 9 PM on a Saturday night.",
+  "At a potluck, %% brought a bag of chips and then ate most of the expensive homemade guacamole.",
+  "%% 'borrowed' a friend's Netflix password and then shared it with three other people without asking.",
+  "When the waiter asked how the food was, %% said 'It's fine,' but then left a one-star review online detailing every minor issue.",
+  "%% saw a stranger drop a $20 bill and kept it without saying anything.",
+  "During a movie in a crowded theater, %% answered a phone call and had a full, loud conversation.",
+  "%% parked their car taking up two parking spots on a busy day.",
+  "%% consistently leaves their dirty dishes in the sink for their roommates to clean.",
+  "%% RSVP'd 'yes' to a wedding but didn't show up and didn't let the couple know beforehand.",
+  "%% takes credit for a colleague's idea in a meeting.",
+  "%% cuts in line at the coffee shop because they are 'in a huge rush'."
+];
