@@ -10,8 +10,6 @@ interface SetupScreenProps {
   startGame: () => void;
   gameDuration: number;
   setGameDuration: (duration: number) => void;
-  isSfw: boolean;
-  setIsSfw: (isSfw: boolean) => void;
 }
 
 const SetupScreen: React.FC<SetupScreenProps> = ({
@@ -22,8 +20,6 @@ const SetupScreen: React.FC<SetupScreenProps> = ({
   startGame,
   gameDuration,
   setGameDuration,
-  isSfw,
-  setIsSfw,
 }) => {
   const canStart = players.length >= MIN_PLAYERS && players.every(p => p.name.trim() !== '');
 
@@ -71,33 +67,11 @@ const SetupScreen: React.FC<SetupScreenProps> = ({
       {players.length < MAX_PLAYERS && (
         <button
           onClick={addPlayer}
-          className="w-full mb-6 py-3 text-lg font-semibold text-pink-300 bg-transparent border-2 border-pink-500/50 rounded-lg hover:bg-pink-500/20 hover:text-white transition-colors"
+          className="w-full mb-8 py-3 text-lg font-semibold text-pink-300 bg-transparent border-2 border-pink-500/50 rounded-lg hover:bg-pink-500/20 hover:text-white transition-colors"
         >
           + Add Player
         </button>
       )}
-
-      <div className="mb-8 w-full">
-        <p className="text-gray-400 text-center mb-3">Game Mode</p>
-        <div className="relative flex w-full p-1 bg-gray-700/80 rounded-lg">
-          <span
-            className="absolute top-1 bottom-1 w-[calc(50%-4px)] bg-pink-500 rounded-md shadow-lg shadow-pink-500/30 transition-transform transform"
-            style={{ transform: isSfw ? 'translateX(calc(100% + 4px))' : 'translateX(0)', transition: 'transform 0.3s ease' }}
-          ></span>
-          <button
-            onClick={() => setIsSfw(false)}
-            className="w-1/2 py-2 rounded-md font-semibold transition-colors relative z-10 text-white"
-          >
-            Normal
-          </button>
-          <button
-            onClick={() => setIsSfw(true)}
-            className="w-1/2 py-2 rounded-md font-semibold transition-colors relative z-10 text-white"
-          >
-            SFW Mode
-          </button>
-        </div>
-      </div>
 
       <div className="mb-8 w-full">
         <p className="text-gray-400 text-center mb-3">Game Duration</p>
