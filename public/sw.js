@@ -1,4 +1,4 @@
-const CACHE_NAME = 'aita-card-game-cache-v5';
+const CACHE_NAME = 'aita-card-game-cache-v6';
 const urlsToCache = [
   '/',
   '/index.html',
@@ -56,34 +56,4 @@ self.addEventListener('fetch', event => {
 
             caches.open(CACHE_NAME)
               .then(cache => {
-                // We don't want to cache everything, just the core assets and maybe fonts if needed.
-                // For this simple PWA, caching the initial list is enough.
-                // We will let the browser handle other requests like fonts.
-                if (urlsToCache.includes(new URL(event.request.url).pathname)) {
-                    cache.put(event.request, responseToCache);
-                }
-              });
-
-            return response;
-          }
-        );
-      })
-  );
-});
-
-// Update a service worker
-self.addEventListener('activate', event => {
-  const cacheWhitelist = [CACHE_NAME];
-  event.waitUntil(
-    caches.keys().then(cacheNames => {
-      return Promise.all(
-        cacheNames.map(cacheName => {
-          if (cacheWhitelist.indexOf(cacheName) === -1) {
-            console.log('Deleting old cache:', cacheName);
-            return caches.delete(cacheName);
-          }
-        })
-      );
-    }).then(() => self.clients.claim()) // Take control of all open clients
-  );
-});
+                // We don't want to cache everything, just

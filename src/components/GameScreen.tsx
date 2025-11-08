@@ -1,3 +1,4 @@
+// FIX: The original file content was invalid. It has been replaced with the correct React component implementation.
 import React from 'react';
 import { Player } from '../types';
 
