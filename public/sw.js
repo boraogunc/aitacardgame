@@ -1,12 +1,10 @@
-const CACHE_NAME = 'aita-card-game-cache-v3';
+const CACHE_NAME = 'aita-card-game-cache-v5';
 const urlsToCache = [
   '/',
   '/index.html',
   '/manifest.json',
   '/icons/icon-192x192.svg',
   '/icons/icon-512x512.svg',
-  'https://cdn.tailwindcss.com',
-  'https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Luckiest+Guy&display=swap',
 ];
 
 // Install a service worker
@@ -15,8 +13,10 @@ self.addEventListener('install', event => {
     caches.open(CACHE_NAME)
       .then(cache => {
         console.log('Opened cache');
+        // Add all core assets to cache
         return cache.addAll(urlsToCache);
       })
+      .then(() => self.skipWaiting()) // Force activation
       .catch(err => {
         console.error('Failed to open cache', err);
       })
@@ -25,6 +25,11 @@ self.addEventListener('install', event => {
 
 // Cache and return requests
 self.addEventListener('fetch', event => {
+    // We only want to cache GET requests.
+    if (event.request.method !== 'GET') {
+        return;
+    }
+
   event.respondWith(
     caches.match(event.request)
       .then(response => {
@@ -39,24 +44,25 @@ self.addEventListener('fetch', event => {
         return fetch(fetchRequest).then(
           response => {
             // Check if we received a valid response
-            if (!response || response.status !== 200 || response.type !== 'basic') {
-              if (event.request.url.startsWith('https://fonts.gstatic.com')) {
-                 // Don't cache opaque responses for fonts, just return them.
-                 return response;
-              }
+            if (!response || response.status !== 200) {
+              return response;
             }
-            
+
             // IMPORTANT: Clone the response. A response is a stream
             // and because we want the browser to consume the response
             // as well as the cache consuming the response, we need
             // to clone it so we have two streams.
-            if (response && response.status === 200) {
-                const responseToCache = response.clone();
-                caches.open(CACHE_NAME)
-                  .then(cache => {
+            const responseToCache = response.clone();
+
+            caches.open(CACHE_NAME)
+              .then(cache => {
+                // We don't want to cache everything, just the core assets and maybe fonts if needed.
+                // For this simple PWA, caching the initial list is enough.
+                // We will let the browser handle other requests like fonts.
+                if (urlsToCache.includes(new URL(event.request.url).pathname)) {
                     cache.put(event.request, responseToCache);
-                  });
-            }
+                }
+              });
 
             return response;
           }
@@ -73,10 +79,11 @@ self.addEventListener('activate', event => {
       return Promise.all(
         cacheNames.map(cacheName => {
           if (cacheWhitelist.indexOf(cacheName) === -1) {
+            console.log('Deleting old cache:', cacheName);
             return caches.delete(cacheName);
           }
         })
       );
-    })
+    }).then(() => self.clients.claim()) // Take control of all open clients
   );
 });
