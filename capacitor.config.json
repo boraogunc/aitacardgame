@@ -1,7 +1,7 @@
 {
   "appId": "com.borogunc.aitacardgame",
   "appName": "AITA Card Game",
-  "webDir": ".",
+  "webDir": "dist",
   "bundledWebRuntime": false,
   "backgroundColor": "#111827",
   "ios": {

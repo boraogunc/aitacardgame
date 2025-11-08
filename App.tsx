@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Player, GameState } from './types';
-import { cards } from './data/cards';
+import { cardsNsfw, cardsSfw } from './data/cards';
 import SetupScreen from './components/SetupScreen';
 import GameScreen from './components/GameScreen';
 import JudgingScreen from './components/JudgingScreen';
@@ -21,6 +21,7 @@ const App: React.FC = () => {
   const [currentCard, setCurrentCard] = useState('');
   const [usedCards, setUsedCards] = useState<string[]>([]);
   const [winners, setWinners] = useState<Player[]>([]);
+  const [isSfw, setIsSfw] = useState(false);
   
   useEffect(() => {
     const timer = setTimeout(() => setIsLoading(false), 1500);
@@ -65,17 +66,18 @@ const App: React.FC = () => {
   };
 
   const getNextCard = useCallback(() => {
-    const availableCards = cards.filter(card => !usedCards.includes(card));
+    const currentDeck = isSfw ? cardsSfw : cardsNsfw;
+    const availableCards = currentDeck.filter(card => !usedCards.includes(card));
     if (availableCards.length === 0) {
       // All cards used, reset and get a new one
-      const newCard = cards[Math.floor(Math.random() * cards.length)];
+      const newCard = currentDeck[Math.floor(Math.random() * currentDeck.length)];
       setUsedCards([newCard]);
       return newCard;
     }
     const newCard = availableCards[Math.floor(Math.random() * availableCards.length)];
     setUsedCards(prev => [...prev, newCard]);
     return newCard;
-  }, [usedCards]);
+  }, [usedCards, isSfw]);
 
   const startGame = () => {
     setTimeLeft(gameDuration);
@@ -137,6 +139,8 @@ const App: React.FC = () => {
             startGame={startGame}
             gameDuration={gameDuration}
             setGameDuration={setGameDuration}
+            isSfw={isSfw}
+            setIsSfw={setIsSfw}
           />
         );
       case 'playerTurn':

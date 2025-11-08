@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Player } from '../types';
 
@@ -21,13 +20,13 @@ const JudgingScreen: React.FC<JudgingScreenProps> = ({ judge, playerInQuestion, 
       <div className="w-full flex flex-col sm:flex-row gap-4">
         <button
           onClick={() => handleJudgment(true)}
-          className="w-full py-6 text-xl font-bold text-white bg-pink-500 rounded-lg shadow-lg shadow-pink-900/40 hover:bg-pink-600 hover:scale-105 transform transition-all"
+          className="w-full py-6 text-xl font-bold text-white bg-pink-500 rounded-lg shadow-lg shadow-pink-500/40 hover:bg-pink-600 hover:scale-105 transform transition-all"
         >
           YOU'RE THE A*SHOLE
         </button>
         <button
           onClick={() => handleJudgment(false)}
-          className="w-full py-6 text-xl font-bold text-white bg-pink-500 rounded-lg shadow-lg shadow-pink-900/40 hover:bg-pink-600 hover:scale-105 transform transition-all"
+          className="w-full py-6 text-xl font-bold text-white bg-gray-600 rounded-lg shadow-lg shadow-gray-800/40 hover:bg-gray-700 hover:scale-105 transform transition-all"
         >
           NOT THE A*SHOLE
         </button>
