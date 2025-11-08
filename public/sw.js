@@ -1,4 +1,4 @@
-const CACHE_NAME = 'aita-card-game-cache-v2';
+const CACHE_NAME = 'aita-card-game-cache-v3';
 const urlsToCache = [
   '/',
   '/index.html',
@@ -7,8 +7,6 @@ const urlsToCache = [
   '/icons/icon-512x512.svg',
   'https://cdn.tailwindcss.com',
   'https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Luckiest+Guy&display=swap',
-  'https://aistudiocdn.com/react@^19.2.0',
-  'https://aistudiocdn.com/react-dom@^19.2.0/client',
 ];
 
 // Install a service worker
